@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int t; cin>>t;
+    while(t--) {
+        unsigned short int n,m,res,ans;
+        cin>>n>>m;
+        char c;
+        cin>>c;
+        if(c == 'L') {
+            ans = n << m ;
+            res = n >> (16-m);
+            n = ans|res;
+        }
+        if(c == 'R') {
+            ans = n >> m;
+            res = n << (16-m);
+            n = ans | res;
+        }
+        cout<<n <<endl;
+    }
+    return 0;
+}
